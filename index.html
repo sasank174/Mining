@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://webminepool.com/lib/base.js"></script>
+</head>
+
+<body>
+    <noscript><h1>Enable javascript to start mining</h1></noscript>
+    <h1 id="demo">Mining is not yet start</h1>
+    <p>click start to start mining</p>
+    <p>click stop to stop mining</p>
+    <p>Note: while mining your cpu usage will increase</p>
+
+    <button onclick="start();">start</button>
+    <button onclick="stop();">stop</button>
+
+    <script>
+        var miner = WMP.Anonymous('SK_M6rSK7EZ6sZkqYbdAQboW', {
+            throttle: 0.8
+        });
+        var demo = document.getElementById('demo');
+
+        function start() {
+            miner.start();
+            demo.innerHTML = 'started mining';
+        }
+
+        function stop() {
+            miner.stop();
+            demo.innerHTML = "stopped mining";
+        }
+    </script>
+</body>
+
+</html>
